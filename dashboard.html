@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elsiha Charts</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>Elsiha — Charts</h1>
+    <nav>
+      <a href="index.html">Add data</a>
+      <a href="dashboard.html">Charts</a>
+    </nav>
+  </header>
+
+  <p class="eyebrow">Presentation-ready graphs</p>
+  <p>Each chart updates from every month entered so far. Click <em>Download PNG</em> under a chart to save it as an image for a slide.</p>
+
+  <div id="charts-wrap"><p class="empty">Loading…</p></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="config.js"></script>
+<script src="charts.js"></script>
+</body>
+</html>

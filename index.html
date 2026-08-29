@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elsiha Monthly Data Entry</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>Elsiha — Monthly Ledger</h1>
+    <nav>
+      <a href="index.html">Add data</a>
+      <a href="dashboard.html">Charts</a>
+    </nav>
+  </header>
+
+  <p class="eyebrow">Data entry</p>
+  <p>Add each month once. Entering the same month again updates that month's row instead of duplicating it — so it's safe to fix a mistake later.</p>
+
+  <form id="entry-form" class="card">
+    <div class="field">
+      <label for="month">Month</label>
+      <input type="month" id="month" required>
+    </div>
+
+    <hr class="stitch">
+    <p class="eyebrow">Issuing &amp; receiving</p>
+    <div class="field-grid">
+      <div class="field">
+        <label for="issuing">Monthly issuing</label>
+        <input type="number" step="any" id="issuing" required>
+      </div>
+      <div class="field">
+        <label for="receiving">Monthly receiving</label>
+        <input type="number" step="any" id="receiving" required>
+      </div>
+    </div>
+
+    <hr class="stitch">
+    <p class="eyebrow">Factory &amp; sales</p>
+    <div class="field-grid">
+      <div class="field">
+        <label for="factory_loading">Factory loading</label>
+        <input type="number" step="any" id="factory_loading" required>
+      </div>
+      <div class="field">
+        <label for="monthly_sales">Monthly sales</label>
+        <input type="number" step="any" id="monthly_sales" required>
+      </div>
+      <div class="field">
+        <label for="net_profit">Net profit</label>
+        <input type="number" step="any" id="net_profit" required>
+      </div>
+    </div>
+
+    <hr class="stitch">
+    <p class="eyebrow">Production defects</p>
+    <div class="field-grid">
+      <div class="field">
+        <label for="total_production">Total units produced</label>
+        <input type="number" step="any" id="total_production" required>
+      </div>
+      <div class="field">
+        <label for="defective_units">Defective units</label>
+        <input type="number" step="any" id="defective_units" required>
+      </div>
+    </div>
+
+    <button type="submit" class="primary" id="submit-btn">Save month</button>
+    <div class="status" id="status"></div>
+  </form>
+
+  <hr class="stitch">
+  <p class="eyebrow">Already entered</p>
+  <div id="existing-wrap"><p class="empty">Loading…</p></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

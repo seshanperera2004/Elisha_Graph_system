@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --canvas: #f4f1e9;
+  --charcoal: #1f2320;
+  --indigo: #2d3b6b;
+  --indigo-deep: #1c2747;
+  --thread-red: #b7472a;
+  --line: #d8d2c1;
+  --card: #fffdf7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--charcoal);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+header.top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--charcoal);
+  padding-bottom: 16px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+header.top h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+header.top nav a {
+  color: var(--indigo);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 20px;
+  border-bottom: 1px solid transparent;
+}
+header.top nav a:hover, header.top nav a:focus-visible { border-bottom-color: var(--indigo); }
+
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--thread-red);
+  margin: 24px 0 4px;
+}
+
+.stitch {
+  border: none;
+  border-top: 2px dashed var(--line);
+  margin: 36px 0;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (max-width: 560px) { .field-grid { grid-template-columns: 1fr; } }
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--indigo-deep);
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  background: #fff;
+  color: var(--charcoal);
+}
+input:focus-visible {
+  outline: 2px solid var(--indigo);
+  outline-offset: 1px;
+}
+
+.field { margin-bottom: 14px; }
+
+button.primary {
+  background: var(--indigo);
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+button.primary:hover { background: var(--indigo-deep); }
+button.primary:disabled { opacity: 0.5; cursor: default; }
+
+button.ghost {
+  background: none;
+  border: 1px solid var(--indigo);
+  color: var(--indigo);
+  padding: 8px 14px;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button.ghost:hover { background: var(--indigo); color: #fff; }
+
+.status {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  margin-top: 12px;
+  min-height: 18px;
+}
+.status.ok { color: #1e6b3a; }
+.status.err { color: var(--thread-red); }
+
+.chart-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 28px;
+}
+.chart-card .chart-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.chart-card h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  margin: 0;
+}
+canvas { max-width: 100%; }
+
+.empty {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: #6b6656;
+  border: 1px dashed var(--line);
+  padding: 24px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+table.ledger {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+}
+table.ledger th, table.ledger td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 6px;
+  text-align: right;
+}
+table.ledger th:first-child, table.ledger td:first-child { text-align: left; }
+table.ledger th {
+  color: var(--indigo-deep);
+  font-weight: 600;
+}
